@@ -1,0 +1,13 @@
+body{
+    background-image: url("RaceMountain.avif");
+    background-size: contain;
+}
+
+a {
+    color: aqua;
+}
+
+label{
+    color: aqua;
+}
+
