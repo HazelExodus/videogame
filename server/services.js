@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const DATABASE_FILE = path.join(__dirname + './files/data.txt');
+const DATABASE_FILE = path.join(__dirname + '/files/data.txt');
 
 var services = function(app) {
     app.post('/write-record', function(req, res) {
@@ -12,9 +12,9 @@ var services = function(app) {
             yearReleased: req.body.yearReleased,
             playerType: req.body.playerType,
             platforms: req.body.platforms,
-            ratings: req.body.ratings
+            rating: req.body.rating
         };
-
+console.log(JSON.stringify(bookData));
         var gameData = [];
         if(fs.existsSync(DATABASE_FILE)){
             
@@ -25,10 +25,10 @@ var services = function(app) {
                 } else {
 
                     //console.log("Data: " + JSON.stringify(bookData));
-                    libraryData = JSON.parse(data);
-                    libraryData.push(bookData);
+                    gameData = JSON.parse(data);
+                    gameData.push(bookData);
 
-                fs.writeFile(DATABASE_FILE, JSON.stringify(libraryData), function(err){
+                fs.writeFile(DATABASE_FILE, JSON.stringify(gameData), function(err){
                     if(err) {
                         res.send(JSON.stringify({msg: err}));
                     } else {
@@ -37,6 +37,16 @@ var services = function(app) {
                   })
                 }
             })
+        }else{
+            gameData.push(bookData);
+            fs.writeFile(DATABASE_FILE, JSON.stringify(gameData), function(err){
+                if(err) {
+                    res.send(JSON.stringify({msg: err}));
+                } else {
+                    res.send(JSON.stringify({msg: "SUCCESS"}));
+                }
+              })
+            
         }
     });
 
@@ -57,7 +67,11 @@ var services = function(app) {
         }
     });
 
+    //put delete function here
+
 };
+
+
 
 module.exports = services;
 

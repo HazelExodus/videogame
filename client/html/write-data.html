@@ -3,11 +3,13 @@
     <head>
         <title>A page for input</title>
 
-        <link rel="stylesheet" href="./VideoGame.css">
-        <link rel="stylesheet" href="./write-data.css">
-        <link rel="stylesheet" href="./write-data.js">
+        <!-- <link rel="stylesheet" href="./VideoGame.css"> -->
+        <link rel="stylesheet" href="/client/css/write-data.css">
+        <link rel="stylesheet" type="text/css" href="/client/css/VideoGame.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src='/client/js/write-data.js' async></script>
     </head>
-    <script src='/client/write-data.js' async></script>
+   
     <body>
         <main>
             <section>
@@ -25,23 +27,26 @@
                 </div>
                 <div>
                     <br> Game Name:
-                    <input type = "text" name ="GameName" size ="50" maxlength="45">
+                    <input id="gameName" type ="text" name ="GameName" size ="50" maxlength="45">
                 
                     <br> Year released:
-                    <input type = "text" name ="yearReleased" size ="50" maxlength="45">
+                    <input id="yearReleased"  type = "text" name ="yearReleased" size ="50" maxlength="45">
                 
                     <br> Player type:
-                    <input type = "text" name ="playerType" size ="50" maxlength="45">
+                    <input id="playerType"  type = "text" name ="playerType" size ="50" maxlength="45">
                 
                     <br> platforms:
-                    <input type = "text" name ="platforms" size ="50" maxlength="45">
+                    <input id="platforms"  type = "text" name ="platforms" size ="50" maxlength="45">
                 
                     <br> Rating:
-                    <input type = "text" name ="rating" size ="50" maxlength="45">
+                    <input id="rating"  type = "text" name ="rating" size ="50" maxlength="45">
+
+                    <br> Delete:
+                    <button value="delete" class="btnDelete" data-id="">Delete</button> 
                 </div>
                 <div>
-                    <button id="submit" class="edit_btn">Submit</button>
-                    <button id="clear" class="edit_btn">Clear</button>
+                    <button id="data-submit" class="edit_btn">Submit</button>
+                    <button id="data-clear" class="edit_btn">Clear</button>
                 </div>
                 
                 

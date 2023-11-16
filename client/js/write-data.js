@@ -17,26 +17,7 @@ const buttonListener = document.getElementById("submit");
     return false;
 });*/
 //Hello
-retrieveData();
 
-function retrieveData(){
-    $.ajax({
-        url: "http://localhost:4000" + '/get-records',
-        get: 'get',
-        success: function(response){
-            var data = JSON.parse(response);
-            if(data.msg == "SUCCESS"){
-
-            }else{
-                console.log(data.msg);
-            }
-
-        },
-        error: function(err) {
-            console.log(err)
-        }
-    });
-}
 
 $('#data-submit').click(function(){
     var gameName = $('#gameName').val();
