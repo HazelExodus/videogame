@@ -18,6 +18,12 @@ var router = function(app){
         res.status(200).sendFile(path.join(__dirname + "/../client/html/view-data.html"));
     });
 
+    app.get("/browse-data", function(req, res) {
+        res.status(200).sendFile(path.join(__dirname + "/../client/html/browse-data.html"));
+    });
+
+    
+
 
 
 };

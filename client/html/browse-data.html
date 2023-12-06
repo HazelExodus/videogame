@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse data</title>
+    <link rel="stylesheet" type="text/css" href="/client/css/browse-data.css">
+    <link rel="stylesheet" type="text/css" href="/client/css/VideoGame.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src='/client/js/browse-data.js' async></script>
+</head>
+<body data-ng-app="browseApp" data-ng-controller="browseCTRL">
+    <section>
+        <div>
+            <div class="link-container">
+                <a class="link" href="/home">"Home"</a>
+                <a class="link" href="/write-data">"Enter Data"</a>
+                <a class="link" href="/view-data">"View Data"</a>
+                <a class="link" href="/browse-data">"Browse Data"</a>
+                
+            </div>
+        </div>
+    </section>
+    <div style="font-size: 30px">
+        <div>
+            <label for="name">Game Name</label>
+            <label style="margin-left: 30px; color: aqua;" id="gameName">{{obj.gameName}}</label>
+          </div>
+      
+          <div>
+            <label for="type">Year Released</label>
+            <label style="margin-left: 30px; color: aqua;" id="yearReleased">{{obj.yearReleased}}</label>
+          </div>
+      
+          <div>
+            <label for="effect">Player Type:</label>
+            <label style="margin-left: 30px; color: aqua;" id="playerType">{{obj.playerType}}</label>
+          </div>
+      
+          <div>
+            <label for="counter-spell">Platforms:</label>
+            <label style="margin-left: 30px; color: aqua;" id="platforms">{{obj.platforms}}</label>
+          </div>
+
+          <div>
+            <label for="counter-spell">Rating:</label>
+            <label style="margin-left: 30px; color: aqua;" id="rating">{{obj.rating}}</label>
+          </div>
+
+        <div style="float: left; clear: right; margin-top: 30px; margin-left: 30px;">
+            <div style="float: left;">
+                <button id="previous" data-ng-click = "changeData(-1)" data-ng-hide="hidePrev">&lt&lt&lt Previous</button>
+            </div>
+        <div style="float: left;">
+            <button id="next" data-ng-click="changeData(1)" data-ng-hide="hideNext">Next &gt&gt&gt</button>
+        </div>
+    </div>
+</body>
+</html>

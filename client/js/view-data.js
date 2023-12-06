@@ -26,16 +26,27 @@ function createTable(data){
         for(i=0; i < data.length; i++){
           
             holding += "<tr>"
-            holding += "<td>" + data[i].gameName + "</td>";
+            holding += "<td>" + data[i].gameName +  "</td>";
             holding += "<td>" + data[i].yearReleased + "</td>";
             holding += "<td>" + data[i].playerType + "</td>";
             holding += "<td>" + data[i].platforms + "</td>";
             holding += "<td>" + data[i].rating + "</td>";
+
+            holding += "<td>"
+                holding += "<button class='btnDelete' data-id='" + data[i].id + "'>Delete</button> "
+            holding += "</td>"
+
             holding += "</tr>"
 
+            // <button class="btnDelete" data-id="">Delete</button> //delete data table
 
         }
+        
+        
         $("#dataTable").html(holding);
+
+        deleteRow();
+
 
 }
 

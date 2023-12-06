@@ -8,6 +8,7 @@ var services = function(app) {
         var id = "lib" + Date.now();
 
         var bookData = {
+            id: id,
             gameName: req.body.gameName,
             yearReleased: req.body.yearReleased,
             playerType: req.body.playerType,
@@ -67,7 +68,7 @@ console.log(JSON.stringify(bookData));
         }
     });
 
-    //put delete function here
+ //put delete function here
 
 };
 
