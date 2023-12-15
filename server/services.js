@@ -79,12 +79,12 @@ console.log(JSON.stringify(bookData));
                     res.send(JSON.stringify({msg: err}));
                 }else{
                     libraryData = JSON.parse(data);
-                    if(libraryData === deleteID){
-                        deleteID.splice(i, 1);
+                }
+                    for (let i = 0; i < libraryData.length; i++){
+                        deleteID.splice(i,1);
                         res.send(JSON.stringify({msg: "SUCCESS"}));
-                    }else{
-                        res.send(JSON.stringify({msg: err}));
-                    }
+                    };
+                    
 
                     fs.writeFile(DATABASE_FILE, JSON.stringify(libraryData), function(err){
                         if(err) {
@@ -94,7 +94,7 @@ console.log(JSON.stringify(bookData));
                         }
                       })
                     
-                }
+                
             });
 
         }
