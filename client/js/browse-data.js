@@ -25,6 +25,24 @@ app.controller('browseCTRL', function($scope, $http) {
 
     $scope.get_records();
 
+    $scope.redrawTable = function() {
+        var yearReleased = $scope.selectedType.value;
+    
+        $http({
+            method: "get",
+            url: "http://localhost:4000" + "/get-record",
+            params: {yearReleased: yearReleased}
+        
+        }).then(function(response) {
+            if(response.data.msg === "SUCCESS") {
+                $scope.records = response.data.records;
+            }
+    
+        }, function(response) {
+            console.log(response);
+        });
+    } 
+
     $scope.changeData = function(direction){
         activeData += direction;
         $scope.obj = data[activeData];
