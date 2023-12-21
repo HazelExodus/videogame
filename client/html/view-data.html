@@ -22,6 +22,14 @@
                             
                         </div>
                     </div>
+                    <div style="margin-left: 70px;">
+                        <label for="groupby">Spell Type:</label>
+                        <select id="groupby"
+                            data-ng-model="selectedType"
+                            data-ng-options="type.display for type in types"
+                            data-ng-change="redrawTable()">
+                        </select>
+                      </div>
                 </section>
                 <section>
                     <table>
